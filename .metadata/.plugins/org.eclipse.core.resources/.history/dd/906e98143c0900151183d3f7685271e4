@@ -25,7 +25,7 @@ public class DebugEight4
             "Enter " + STOP + " when you want to stop"); 
          x++;
       }
-      for(y = x - 1; y >= 0; y--)
+      for(y = x; y >= 0; --y)
       {
          message.append(array[y]);
          message.append("\n");

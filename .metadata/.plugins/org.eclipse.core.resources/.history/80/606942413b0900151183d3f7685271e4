@@ -23,11 +23,10 @@ public class DebugEight4
          entry = JOptionPane.showInputDialog(null,
             "Enter another word\n" +
             "Enter " + STOP + " when you want to stop"); 
-         x++;
       }
-      for(y = x - 1; y >= 0; y--)
+      for(y = 0; y < 0; ++y)
       {
-         message.append(array[y]);
+         message.append(entry);
          message.append("\n");
       }
       JOptionPane.showMessageDialog(null, message);
