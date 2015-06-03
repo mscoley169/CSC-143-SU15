@@ -1,0 +1,46 @@
+package edu.nashcc.bookstore;
+
+import javax.swing.JOptionPane;
+
+public class BookStore {
+
+	public static void main(String[] args) {
+
+		// creating array of books
+		String[] bookList = { "Harry Potter", "Animorphs", "East of Eden",
+				"Jaws", "Lord of the Rings" };
+		// getting input and converting it to lower + removing whitespace
+		String userEntry = userInput();
+		String formattedBook = formatBook(userEntry);
+		
+
+		// testy mctesterson stuffz
+		System.out.println(bookList[0]);
+		System.out.println(bookList[1]);
+		System.out.println(bookList[2]);
+		System.out.println(bookList[3]);
+		System.out.println(bookList[4]);
+		System.out.println(formattedBook);
+	}
+
+	private static String userInput() {
+		String userInput = JOptionPane.showInputDialog(null,
+				"Search for a book: ", "Books n Stuff",
+				JOptionPane.QUESTION_MESSAGE);
+		return userInput;
+	}
+
+	private static String errorMsg() {
+		String errorMsg = "We do not have that book at this time.";
+		return errorMsg;
+	}
+
+	private static String successMsg() {
+		String successMsg = "We have that book in stock!";
+		return successMsg;
+	}
+	private static String formatBook(String book){
+		String formattedBook = book.replaceAll(" ", "").toLowerCase();
+		return formattedBook;
+	}
+}

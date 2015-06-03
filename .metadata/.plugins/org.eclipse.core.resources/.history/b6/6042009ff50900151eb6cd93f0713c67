@@ -1,0 +1,14 @@
+package edu.nashcc.bookstore;
+
+public class BookStore {
+
+	public static void main(String[] args) {
+
+		String[] bookList = { "Harry Potter", "Animorphs", "East of Eden",
+				"Jaws", "Lord of the Rings" };
+
+		String book = bookList[0];
+		System.out.println(book);
+	}
+
+}
