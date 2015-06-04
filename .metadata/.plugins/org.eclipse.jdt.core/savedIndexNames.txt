@@ -1,6 +1,2 @@
 INDEX VERSION 1.127+C:\Users\mscoley169\Documents\GitHub\CSC-143-SU15\.metadata\.plugins\org.eclipse.jdt.core
-1674118837.index
-1584714973.index
-2326438784.index
 4206909199.index
-349058595.index

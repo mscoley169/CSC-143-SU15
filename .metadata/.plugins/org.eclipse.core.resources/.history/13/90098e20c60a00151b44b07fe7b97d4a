@@ -11,15 +11,6 @@ public class BookStore {
 
 	public static void main(String[] args) {
 
-		
-		/* TODO: 
-		 * 		-create Book class
-		 * 		-move non JOptionPane methods to Book class
-		 * 		-instantiate Book object in main()
-		 * 		-do stuffz in main() with Book methods
-		 */
-		
-		
 		// creating array of books
 		String[] bookList = { "Harry Potter", "Animorphs", "East of Eden",
 				"Jaws", "Lord of the Rings" };
