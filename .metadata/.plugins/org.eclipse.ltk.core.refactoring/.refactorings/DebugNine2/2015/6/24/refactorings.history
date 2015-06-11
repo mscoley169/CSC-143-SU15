@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;DebugNine2/src/edu.nashcc.debug&apos;&#x0D;&#x0A;- Original project: &apos;DebugNine2&apos;&#x0D;&#x0A;- Destination element: &apos;DebugNine2/src/edu.nashcc.debug&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     DebugNine2.java&#x0D;&#x0A;     Movie.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;edu.nashcc.debug" element1="/src&lt;{DebugNine2.java" element2="/src&lt;{Movie.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1433986861967" units="2" version="1.0"/>
+</session>

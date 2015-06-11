@@ -1,5 +1,6 @@
-/* Name: 
- * 
+/* Matthew S. Coley
+ * Ch 9 debug
+ * 10 June 2015
  */
 
 package edu.nashcc.dbg;
