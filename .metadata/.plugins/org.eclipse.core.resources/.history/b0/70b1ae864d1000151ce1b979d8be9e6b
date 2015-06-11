@@ -43,14 +43,13 @@ public class SalespersonDatabase {
 					errorMsg("empty");
 				} else {
 					userID = userInput("Enter the salesperson ID you wish to remove:");
-					Iterator<Object> it = salespersonDB.iterator();
-					while(it.hasNext()){
-						it.next();
-							if(it.equals(userID)){
-								it.remove();
+					Iterator<Salesperson> it = salespersonDB.iterator();
+					while (it.hasNext()){
+						if(sp.getID().equals(userID)); {
+							it.remove();
 						}
 					}
-					// salespersonDB.remove(); // going to error, no userID
+					salespersonDB.remove(); // going to error, no userID
 													// in list, is a salesperson
 													// object
 				}
