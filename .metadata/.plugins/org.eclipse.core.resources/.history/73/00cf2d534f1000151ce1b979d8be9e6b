@@ -9,7 +9,7 @@ public class SalespersonDatabase {
 
 	public static void main(String[] args) {
 		// creating 20 item arraylist
-		ArrayList<Salesperson> salespersonDB = new ArrayList<Salesperson>(20);
+		ArrayList<Object> salespersonDB = new ArrayList<Object>(20);
 
 		// user input + StringBuilder for initial prompt
 		StringBuilder sb = new StringBuilder();
@@ -43,12 +43,11 @@ public class SalespersonDatabase {
 					errorMsg("empty");
 				} else {
 					userID = userInput("Enter the salesperson ID you wish to remove:");
-					Iterator<Salesperson> it = salespersonDB.iterator();
+					Iterator<Object> it = salespersonDB.iterator();
 					while(it.hasNext()){
-						Salesperson sp = it.next();
-							if(sp.equals(userID)){
+						it.next();
+							if(it.equals(userID)){
 								it.remove();
-								JOptionPane.showMessageDialog(null, "success?");
 						}
 					}
 					// salespersonDB.remove(); // going to error, no userID

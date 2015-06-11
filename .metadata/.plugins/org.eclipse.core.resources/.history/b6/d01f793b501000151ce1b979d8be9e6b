@@ -67,7 +67,7 @@ public class SalespersonDatabase {
 					String newID = userInput("Enter the new ID:");
 					salespersonDB.remove(userID); // FIX: Salesperson object,
 													// not userID
-					salespersonDB.add(newID);
+					//salespersonDB.add(newID);
 				}
 
 				// Salesperson salesperson[i] = new Salesperson(ID, sales);

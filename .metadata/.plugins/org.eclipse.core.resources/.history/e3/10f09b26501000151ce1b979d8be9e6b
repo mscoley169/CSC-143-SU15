@@ -45,8 +45,8 @@ public class SalespersonDatabase {
 					userID = userInput("Enter the salesperson ID you wish to remove:");
 					Iterator<Salesperson> it = salespersonDB.iterator();
 					while(it.hasNext()){
-						Salesperson sp = it.next();
-							if(sp.equals(userID)){
+						it.next();
+							if(it.equals(userID)){
 								it.remove();
 								JOptionPane.showMessageDialog(null, "success?");
 						}
