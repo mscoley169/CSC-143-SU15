@@ -1,0 +1,10 @@
+package edu.nashcc.menu;
+
+public class MenuSearch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
