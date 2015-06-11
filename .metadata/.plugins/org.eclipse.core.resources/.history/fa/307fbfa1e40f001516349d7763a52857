@@ -29,8 +29,8 @@ public class SalespersonDatabase {
 			errorMsg(); 
 		}
 
-		//Salesperson salesperson[i] = new Salesperson(ID, sales);
-		// http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+		//for loop, Salesperson salesperson[i] = new Salesperson(ID, sales);
+		
 		
 	// user input for ID and sales -- move
 	int ID = Integer.parseInt(userInput("Enter the ID: "));
