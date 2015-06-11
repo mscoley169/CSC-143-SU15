@@ -25,32 +25,32 @@ public class SalespersonDatabase {
 		switch(userChoice){
 			case "1":
 				if(salespersonDB.size() < 20 ) { // ArrayList has isEmpty() method
-					userID = userInput("Enter the salesperson ID you wish to add:");
-					userSales = Integer.parseInt(userInput("Enter the sales amount:"));
-					Salesperson sp = new Salesperson(userID, userSales);
-					salespersonDB.add(sp);
+			userID = userInput("Enter the salesperson ID you wish to add:");
+			userSales = Integer.parseInt(userInput("Enter the sales amount:"));
+			Salesperson sp = new Salesperson(userID, userSales);
+			salespersonDB.add(sp);
 			// move under Switch -- double userSales = Double.parseDouble(userInput("Enter the sales amount:"));
 				} else {
-					errorMsg("full"); 
+			errorMsg("full"); 
 				}
 				break;
 			case "2":
 				if(salespersonDB.isEmpty()) {
 					errorMsg("empty");
 				} else {
-					userID = userInput("Enter the salesperson ID you wish to remove:");
-					salespersonDB.remove(userID); // going to error, no userID in list, is a salesperson object
+					String userID = userInput("Enter the salesperson ID you wish to remove:");
+					salespersonDB.remove(userID);
 				}
 				break;
 			case "3":
-				userID = userInput("Enter the ID you wish to change:");
+				String userID = userInput("Enter the ID you wish to change:");
 				if(salespersonDB.isEmpty()){
 					errorMsg("empty");
 				} else if(!salespersonDB.contains(userID)){
 					JOptionPane.showMessageDialog(null, "That ID does not exist.");
 				} else {
 					String newID = userInput("Enter the new ID:");
-					salespersonDB.remove(userID); // FIX: Salesperson object, not userID
+					salespersonDB.remove(userID);
 					salespersonDB.add(newID);
 				}
 				

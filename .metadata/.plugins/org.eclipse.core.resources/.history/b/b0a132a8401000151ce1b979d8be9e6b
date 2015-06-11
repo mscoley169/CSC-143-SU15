@@ -1,18 +1,18 @@
 package edu.nashcc.sales;
 
 public class Salesperson {
-	String ID;
+	int ID;
 	double sales;
 	
 	
-	public Salesperson(String iD, double sales) {
+	public Salesperson(int iD, double sales) {
 		this.ID = iD;
 		this.sales = sales;
 	}
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
-	public void setID(String iD) {
+	public void setID(int iD) {
 		this.ID = iD;
 	}
 	public double getSales() {
