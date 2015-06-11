@@ -8,7 +8,7 @@ public class SalespersonDatabase {
 
 	public static void main(String[] args) {
 	// creating 20 item arraylist
-	ArrayList salesperson = new ArrayList(20);
+	ArrayList salespersonDB = new ArrayList(20);
 	
 	// user input + StringBuilder for initial prompt
 	StringBuilder sb = new StringBuilder();
@@ -20,27 +20,48 @@ public class SalespersonDatabase {
 	String userChoice = userInput(sb.toString());
 	
 	while(userChoice != "0"){
-	
 		switch(userChoice){
-		case "1":
-		if(!database.isFull()) { // ArrayList has isEmpty() method
-			promptUserForId();
-		} else {
-			errorMsg(); 
-		}
-
+			case "1":
+				if(salespersonDB.size() < 20) { // ArrayList has isEmpty() method
+			String userID = userInput("Enter the salesperson ID you wish to add:");
+			salespersonDB.add(userID);
+			// move under Switch -- double userSales = Double.parseDouble(userInput("Enter the sales amount:"));
+				} else {
+			errorMsg("full"); 
+				}
+				break;
+			case "2":
+				if(salespersonDB.isEmpty()) {
+					errorMsg("empty");
+				} else {
+					String userID = userInput("Enter the salesperson ID you wish to remove:");
+					salespersonDB.remove(userID);
+				}
+				break;
+			case "3":
+				String userID = userInput("Enter the ID you wish to change:");
+				if(salespersonDB.isEmpty()){
+					errorMsg("empty");
+				} else if(!salespersonDB.contains(userID)){
+					JOptionPane.showMessageDialog(null, "That ID does not exist.");
+				} else {
+					String newID = userInput("Enter the new ID:");
+					salespersonDB.remove(userID);
+					salespersonDB.add(newID);
+				}
+				
 		//Salesperson salesperson[i] = new Salesperson(ID, sales);
 		// http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
 		
-	// user input for ID and sales -- move
-	int ID = Integer.parseInt(userInput("Enter the ID: "));
-	double sales = Double.parseDouble(userInput("Enter the sales amount: "));
+	// user input for ID and sales -- move/delete?
+	//int ID = Integer.parseInt(userInput("Enter the ID: "));
+	//double sales = Double.parseDouble(userInput("Enter the sales amount: "));
 	
 		
 	// updating userChoice
 	userChoice = userInput(sb.toString());
 		}
-	} // end while(userChoice != "0")
+		} // end while(userChoice != "0")
 	}	
 	
 	
