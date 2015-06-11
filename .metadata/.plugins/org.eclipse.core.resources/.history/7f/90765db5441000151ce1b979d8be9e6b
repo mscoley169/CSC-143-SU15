@@ -19,7 +19,7 @@ public class SalespersonDatabase {
 		sb.append("0 --- QUIT");
 		String userChoice = userInput(sb.toString());
 
-		while (!userChoice.equals("0")) {
+		while (userChoice != "0") {
 			String userID;
 			int userSales;
 			switch (userChoice) {
