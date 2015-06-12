@@ -20,20 +20,19 @@ public class SalespersonDatabase {
 		sb.append("0 --- QUIT");
 		String userChoice = userInput(sb.toString());
 
+		
+		// I don't even...
 		while (!userChoice.equals("0")) {
 			String userID;
 			int userSales;
 			switch (userChoice) {
 			case "1":
-				if (salespersonDB.size() < 20) { // ArrayList has isEmpty()
-													// method
+				if (salespersonDB.size() < 20) { 										
 					userID = userInput("Enter the salesperson ID you wish to add:");
 					userSales = Integer
 							.parseInt(userInput("Enter the sales amount:"));
 					Salesperson sp = new Salesperson(userID, userSales);
 					salespersonDB.add(sp);
-					// move under Switch -- double userSales =
-					// Double.parseDouble(userInput("Enter the sales amount:"));
 				} else {
 					errorMsg("full");
 				}
@@ -44,45 +43,40 @@ public class SalespersonDatabase {
 				} else {
 					userID = userInput("Enter the salesperson ID you wish to remove:");
 					Iterator<Salesperson> it = salespersonDB.iterator();
-					while(it.hasNext()){
+					while (it.hasNext()) {
 						Salesperson sp = it.next();
-							if(sp.equals(userID)){
-								it.remove();
-								JOptionPane.showMessageDialog(null, "success?");
-						}
+						if (sp.getID().equals(userID)) {
+							it.remove();
+							displayMsg("Successfully deleted.");
+						} else {
+							displayMsg("That ID does not exist."); // runs twice regardless
+						}										   // lolwat idk
 					}
-					// salespersonDB.remove(); // going to error, no userID
-													// in list, is a salesperson
-													// object
 				}
 				break;
 			case "3":
 				userID = userInput("Enter the ID you wish to change:");
+				Iterator<Salesperson> it1 = salespersonDB.iterator();	// iterator to test
+				Salesperson sp1 = it1.next(); 							// else if
 				if (salespersonDB.isEmpty()) {
 					errorMsg("empty");
-				} else if (!salespersonDB.contains(userID)) {
-					JOptionPane.showMessageDialog(null,
-							"That ID does not exist.");
+				} else if (!sp1.getID().equals(userID)) {
+					displayMsg("That ID does not exist.");
 				} else {
-					String newID = userInput("Enter the new ID:");
-					salespersonDB.remove(userID); // FIX: Salesperson object,
-													// not userID
-					salespersonDB.add(newID);
+					Iterator<Salesperson> it2 = salespersonDB.iterator();
+					while (it2.hasNext()) {
+						Salesperson sp = it2.next();
+						if (sp.getID().equals(userID)) {
+							String newID = userInput("Enter the new ID:");
+							sp.setID(newID);
+							displayMsg("Successfully changed.");
+						}
+					}
+
 				}
-
-				// Salesperson salesperson[i] = new Salesperson(ID, sales);
-				// http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
-
-				// user input for ID and sales -- move/delete?
-				// int ID = Integer.parseInt(userInput("Enter the ID: "));
-				// double sales =
-				// Double.parseDouble(userInput("Enter the sales amount: "));
-
 			}
-
 			// updating userChoice
 			userChoice = userInput(sb.toString());
-		
 		} // end while(userChoice != "0")
 	}
 
@@ -92,6 +86,10 @@ public class SalespersonDatabase {
 
 	public static void errorMsg(String prompt) {
 		JOptionPane.showMessageDialog(null, "Database is " + prompt + ".");
+	}
+
+	public static void displayMsg(String prompt) {
+		JOptionPane.showMessageDialog(null, prompt);
 	}
 
 }
