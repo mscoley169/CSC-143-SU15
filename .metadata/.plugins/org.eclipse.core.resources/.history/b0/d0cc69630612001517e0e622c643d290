@@ -6,4 +6,10 @@ public class DebugExtendedVacation extends DebugVacation
       
 	   days = 30;
    }
+   
+ //  public int getDays()
+ //  {
+//	  super.getDays();
+ //     return days;
+  // }
 }

@@ -1,9 +1,15 @@
 package edu.nashcc.debug;
 public class DebugExtendedVacation extends DebugVacation
 {
-   public DebugExtendedVacation()
+   public DebugVacation()
    {
       
 	   days = 30;
+   }
+   
+   public int getDays()
+   {
+	  super.getDays();
+      return days;
    }
 }
