@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;edu.nashcc.party.UseParty&apos; to &apos;UseDinnerParty&apos;&#x0D;&#x0A;- Original project: &apos;Party&apos;&#x0D;&#x0A;- Original element: &apos;edu.nashcc.party.UseParty&apos;&#x0D;&#x0A;- Renamed element: &apos;edu.nashcc.party.UseDinnerParty&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UseParty&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;edu.nashcc.party{UseParty.java[UseParty" matchStrategy="1" name="UseDinnerParty" qualified="false" references="true" similarDeclarations="false" stamp="1434554794397" textual="false" version="1.0"/>
+</session>
