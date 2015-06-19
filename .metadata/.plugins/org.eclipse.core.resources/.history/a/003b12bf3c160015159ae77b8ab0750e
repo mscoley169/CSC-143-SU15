@@ -1,0 +1,9 @@
+package edu.nashcc.candle;
+
+public class ScentedCandle extends Candle {
+	private String scent;
+	
+	private ScentedCandle(){
+		super(color, height);
+	}
+}
