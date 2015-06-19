@@ -5,7 +5,7 @@ public class ScentedCandle extends Candle {
 	
 	private ScentedCandle(String color, int height, String scent){
 		super(color, height);
-		setScent(scent);
+		this.scent = scent;
 		super.setPrice(height);
 	}
 	
@@ -15,7 +15,8 @@ public class ScentedCandle extends Candle {
 	public String getScent(){
 		return this.scent;
 	}
-	public void setPrice(int height){
-		super.setPrice(height);
-		}
+	public void setPrice(int Height){
+		super.setPrice();
+		
+	}
 }
