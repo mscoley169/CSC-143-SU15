@@ -9,8 +9,8 @@ public class Candle {
 		// prevents empty object instantiation
 	}
 	public Candle(String color, int height){
-		this.color = color;
-		this.height = height;
+		setColor(color);
+		setHeight(height);
 		setPrice(height);
 	}
 	
@@ -22,6 +22,9 @@ public class Candle {
 	}
 	public void setHeight(int height){
 		this.height = height;
+	}
+	public int getHeight(){
+		return this.height;
 	}
 	public void setPrice(int height){
 		this.price = 2 * height; // $2/inch

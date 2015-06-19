@@ -1,0 +1,31 @@
+package edu.nashcc.candle;
+
+import javax.swing.JOptionPane;
+
+public class CandleDemo {
+
+	public static void main(String[] args) {
+
+		// instantiating a candle object
+		
+		
+	}
+	
+	private static String userInput(String prompt){
+		return JOptionPane.showInputDialog(null, prompt);
+	}
+	private static void display(String msg){
+		JOptionPane.showMessageDialog(null, msg);
+	}
+	private static String createString(String color, int height, double price){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Color: ");
+		sb.append(color);
+		sb.append("\nHeight: ");
+		sb.append(height);
+		sb.append("\nPrice: ");
+		sb.append(price);
+		return sb.toString();
+	}
+
+}
