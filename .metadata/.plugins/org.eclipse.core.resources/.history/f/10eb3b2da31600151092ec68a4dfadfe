@@ -15,7 +15,7 @@ public class ScentedCandle extends Candle {
 	public String getScent(){
 		return this.scent;
 	}
-	protected void setPrice(int height){
+	public void setPrice(int height){
 		super.setPrice(height);
 		this.price = 3 * height; // $3/inch
 		}

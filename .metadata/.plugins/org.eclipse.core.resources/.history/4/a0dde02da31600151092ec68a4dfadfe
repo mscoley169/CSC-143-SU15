@@ -26,7 +26,7 @@ public class Candle {
 	public int getHeight(){
 		return this.height;
 	}
-	protected void setPrice(int height){
+	public void setPrice(int height){
 		this.price = 2 * height; // $2/inch
 	}
 	public double getPrice(){

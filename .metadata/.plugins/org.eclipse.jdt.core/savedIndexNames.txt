@@ -12,7 +12,6 @@ INDEX VERSION 1.127+C:\Users\Matthew\Documents\GitHub\CSC-143-SU15\.metadata\.pl
 4191425087.index
 3088135294.index
 490505411.index
-875571250.index
 1913418516.index
 2631143054.index
 793443024.index
