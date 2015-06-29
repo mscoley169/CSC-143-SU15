@@ -1,3 +1,8 @@
+/*	Matthew S. Coley
+ * 	SalespersonDB
+ * 	29 June 2015
+ */
+
 package edu.nashcc.sales;
 
 import java.util.ArrayList;
@@ -43,15 +48,19 @@ public class SalespersonDatabase {
 				} else {
 					userID = userInput("Enter the salesperson ID you wish to remove:");
 					Iterator<Salesperson> it = salespersonDB.iterator();
+					Salesperson found = null;
 					while (it.hasNext()) {
 						Salesperson sp = it.next();
-						if (sp.getID().equals(userID)) {
-							it.remove();
-							displayMsg("Successfully deleted.");
-						} else {
-							displayMsg("That ID does not exist."); // runs twice regardless
-						}										   // lolwat idk
+							if(sp.getID().equals(userID)){
+								found = sp;
+							}
 					}
+					if (found != null) {
+					it.remove();
+					displayMsg("Successfully deleted.");
+				} else {
+					displayMsg("That ID does not exist."); 
+				}	
 				}
 				break;
 			case "3":
@@ -65,14 +74,14 @@ public class SalespersonDatabase {
 				} else {
 					Iterator<Salesperson> it2 = salespersonDB.iterator();
 					while (it2.hasNext()) {
-						Salesperson sp = it2.next();
-						if (sp.getID().equals(userID)) {
+						Salesperson sp2 = it2.next();
+						if (sp2.getID().equals(userID)) {
 							String newID = userInput("Enter the new ID:");
-							sp.setID(newID);
+							sp2.setID(newID);
 							displayMsg("Successfully changed.");
-						}
-					}
-
+						} // only works on salespersonDB[0]
+					}	  // was working correctly until I fixed
+						  // the delete case (case "2")
 				}
 			}
 			// updating userChoice

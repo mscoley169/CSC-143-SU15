@@ -1,8 +1,0 @@
-package edu.nashcc.debug;
-public class DebugExtendedVacation extends DebugVacation
-{
-   public int DebugVacation()
-   {
-      return days = 30;
-   }
-}
