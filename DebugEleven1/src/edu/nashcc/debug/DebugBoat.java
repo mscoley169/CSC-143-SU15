@@ -1,3 +1,9 @@
+/* Matthew S. Coley
+ * Debug Ch 11
+ * 30 June 2015
+ * 
+ */
+
 package edu.nashcc.debug;
 
 public abstract class DebugBoat
