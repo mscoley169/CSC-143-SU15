@@ -1,0 +1,34 @@
+package edu.nashcc.cars;
+
+public class Chevy extends Auto {
+
+	public Chevy() {
+		super("Chevy");
+		setPrice();
+	}
+	public void setPrice(){
+		this.price = 22000; // $22,000
+	}
+	public String modelOptions(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("1 - Camaro\n");
+		sb.append("2 - Cavalier\n");
+		
+		return sb.toString();
+	}
+}
+
+//class Camaro extends Chevy {
+//
+//	private String model;
+//	public Camaro() {
+//		super("Camaro");
+//		setModel();
+//	}
+//	public void setModel(){
+//		this.model = "Camaro";
+//	}
+//	public String getModel(){
+//		return this.model;
+//	}
+//}
