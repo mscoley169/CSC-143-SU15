@@ -26,7 +26,7 @@ public class CreateFilesBasedOnState {
 				+ delimiter + BALANCE_FORMAT
 				+ System.getProperty("line.separator");
 		final int RECSIZE = s.length();
-		
+
 		FileChannel fcIn = null;
 		FileChannel fcOut = null;
 		String idString;
@@ -35,17 +35,18 @@ public class CreateFilesBasedOnState {
 		String state;
 		double balance;
 		final String QUIT = "999";
-		
+
 		createEmptyFile(inStateFile, s);
 		createEmptyFile(outOfStateFile, s);
-		
-		try
-		{
-			fcIn = (FileChannel)Files.newByteChannel(inStateFile, CREATE, WRITE);
-			fcOut = (FileChannel)Files.newByteChannel(outOfStateFile, CREATE, WRITE);
+
+		try {
+			fcIn = (FileChannel) Files.newByteChannel(inStateFile, CREATE,
+					WRITE);
+			fcOut = (FileChannel) Files.newByteChannel(outOfStateFile, CREATE,
+					WRITE);
 			System.out.print("Enter customer account number >> ");
 			idString = input.nextLine();
-			while(!(idString.equals(QUIT))){
+			while (!(idString.equals(QUIT))) {
 				id = Integer.parseInt(idString);
 				System.out.print("Enter name for customer >> ");
 				name = input.nextLine();
@@ -58,29 +59,32 @@ public class CreateFilesBasedOnState {
 				balance = input.nextDouble();
 				input.nextLine();
 				DecimalFormat df = new DecimalFormat(BALANCE_FORMAT);
-				s = idString + delimiter + name + delimiter + state + delimiter + df.format(balance); //+ System.getProperty("line.separator");
-				byte data[] = s.getBytes();
+				s = idString + delimiter + name + delimiter + state + delimiter
+						+ df.format(balance); // +
+											// System.getProperty("line.separator");
+				byte data[] = s.getBytes(); // ^commented out because it broke
+											// my txt file format
 				ByteBuffer buffer = ByteBuffer.wrap(data);
-				if(state.equals(HOME_STATE)){
+				if (state.equals(HOME_STATE)) {
 					fcIn.position(id * RECSIZE);
 					fcIn.write(buffer);
 				} else {
 					fcOut.position(id * RECSIZE);
 					fcOut.write(buffer);
 				}
-				System.out.print("Enter next customer account number or " + QUIT + " to quit >> ");
-				idString = input.nextLine();	
+				System.out.print("Enter next customer account number or "
+						+ QUIT + " to quit >> ");
+				idString = input.nextLine();
 			}
 			fcIn.close();
 			fcOut.close();
 			input.close(); // closing input stream
-		}
-		catch(Exception e) // default catch for errors
+		} catch (Exception e) // default catch for errors
 		{
 			System.out.println(e);
 		}
-		
-	} //end of main()
+
+	} // end of main()
 
 	public static void createEmptyFile(Path file, String s) {
 		final int NUMRECS = 1000;

@@ -1,9 +1,0 @@
-package edu.nashcc.cars;
-
-public class UseAuto {
-
-	public static void main(String[] args) {
-
-	}
-
-}
