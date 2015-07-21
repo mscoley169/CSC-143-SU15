@@ -247,18 +247,5 @@ public class Calculator {
 		divButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		divButton.setBounds(332, 180, 89, 23);
 		frmCalculator.getContentPane().add(divButton);
-		
-		JButton btnClear = new JButton("CLEAR");
-		btnClear.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				firstNum.setText("");
-				secondNum.setText("");
-			}
-		});
-		btnClear.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnClear.setBounds(335, 11, 89, 23);
-		frmCalculator.getContentPane().add(btnClear);
-		
-
 	}
 }

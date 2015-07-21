@@ -83,10 +83,10 @@ public class Calculator {
 		plusButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// check each text field for a valid number
-				double num1, num2;
+				int num1, num2;
 				try
 				{
-					num1 = Double.parseDouble(firstNum.getText());
+					num1 = Integer.parseInt(firstNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -95,7 +95,7 @@ public class Calculator {
 				}
 				try
 				{
-					num2 = Double.parseDouble(secondNum.getText());
+					num2 = Integer.parseInt(secondNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -105,8 +105,8 @@ public class Calculator {
 				// try the math
 				try
 				{
-					double ans = num1 + num2;
-					answer = Double.toString(ans);
+					int ans = num1 + num2;
+					answer = Integer.toString(ans);
 					lblAnswer.setText("ANSWER: \t" + answer);
 				}
 				catch(Exception exc)
@@ -124,10 +124,10 @@ public class Calculator {
 		subButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// check each text field for a valid number
-				double num1, num2;
+				int num1, num2;
 				try
 				{
-					num1 = Double.parseDouble(firstNum.getText());
+					num1 = Integer.parseInt(firstNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -136,7 +136,7 @@ public class Calculator {
 				}
 				try
 				{
-					num2 = Double.parseDouble(secondNum.getText());
+					num2 = Integer.parseInt(secondNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -146,8 +146,8 @@ public class Calculator {
 				// try the math
 				try
 				{
-					double ans = num1 - num2;
-					answer = Double.toString(ans);
+					int ans = num1 - num2;
+					answer = Integer.toString(ans);
 					lblAnswer.setText("ANSWER: \t" + answer);
 				}
 				catch(Exception exc)
@@ -165,10 +165,10 @@ public class Calculator {
 		multiButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// check each text field for a valid number
-				double num1, num2;
+				int num1, num2;
 				try
 				{
-					num1 = Double.parseDouble(firstNum.getText());
+					num1 = Integer.parseInt(firstNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -177,7 +177,7 @@ public class Calculator {
 				}
 				try
 				{
-					num2 = Double.parseDouble(secondNum.getText());
+					num2 = Integer.parseInt(secondNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -187,8 +187,8 @@ public class Calculator {
 				// try the math
 				try
 				{
-					double ans = num1 * num2;
-					answer = Double.toString(ans);
+					int ans = num1 * num2;
+					answer = Integer.toString(ans);
 					lblAnswer.setText("ANSWER: \t" + answer);
 				}
 				catch(Exception exc)
@@ -206,10 +206,10 @@ public class Calculator {
 		divButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				// check each text field for a valid number
-				double num1, num2;
+				int num1, num2;
 				try
 				{
-					num1 = Double.parseDouble(firstNum.getText());
+					num1 = Integer.parseInt(firstNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -218,7 +218,7 @@ public class Calculator {
 				}
 				try
 				{
-					num2 = Double.parseDouble(secondNum.getText());
+					num2 = Integer.parseInt(secondNum.getText());
 				}
 				catch(Exception exc)
 				{
@@ -228,7 +228,7 @@ public class Calculator {
 				// try the math
 				try
 				{
-					double ans = num1 / num2;
+					double ans = (double)num1 / (double)num2;
 					answer = Double.toString(ans);
 					lblAnswer.setText("ANSWER: \t" + answer);
 				}
@@ -247,18 +247,5 @@ public class Calculator {
 		divButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		divButton.setBounds(332, 180, 89, 23);
 		frmCalculator.getContentPane().add(divButton);
-		
-		JButton btnClear = new JButton("CLEAR");
-		btnClear.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				firstNum.setText("");
-				secondNum.setText("");
-			}
-		});
-		btnClear.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnClear.setBounds(335, 11, 89, 23);
-		frmCalculator.getContentPane().add(btnClear);
-		
-
 	}
 }
