@@ -1,0 +1,92 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.Font;
+
+
+public class Calculator {
+
+	private JFrame frame;
+	private JTextField num1;
+	private JTextField num2;
+	private String answer;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calculator window = new Calculator();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Calculator() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		num1 = new JTextField();
+		num1.setBounds(100, 50, 86, 20);
+		frame.getContentPane().add(num1);
+		num1.setColumns(10);
+		
+		num2 = new JTextField();
+		num2.setBounds(100, 130, 86, 20);
+		frame.getContentPane().add(num2);
+		num2.setColumns(10);
+		
+		JLabel lblFirstNumber = new JLabel("First Number");
+		lblFirstNumber.setBounds(100, 35, 86, 14);
+		frame.getContentPane().add(lblFirstNumber);
+		
+		JLabel lblSecondNumber = new JLabel("Second Number");
+		lblSecondNumber.setBounds(100, 114, 86, 14);
+		frame.getContentPane().add(lblSecondNumber);
+		
+		JLabel lblAnswer = new JLabel("ANSWER:");
+		lblAnswer.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblAnswer.setBounds(208, 75, 213, 35);
+		frame.getContentPane().add(lblAnswer);
+		
+		JButton plusButton = new JButton("+");
+		plusButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+		plusButton.setBounds(10, 180, 89, 23);
+		frame.getContentPane().add(plusButton);
+		
+		JButton subButton = new JButton("-");
+		subButton.setFont(new Font("Tahoma", Font.BOLD, 18));
+		subButton.setBounds(109, 180, 89, 23);
+		frame.getContentPane().add(subButton);
+		
+		JButton multiButton = new JButton("*");
+		multiButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+		multiButton.setBounds(233, 180, 89, 23);
+		frame.getContentPane().add(multiButton);
+		
+		JButton divButton = new JButton("/");
+		divButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+		divButton.setBounds(332, 180, 89, 23);
+		frame.getContentPane().add(divButton);
+	}
+}
