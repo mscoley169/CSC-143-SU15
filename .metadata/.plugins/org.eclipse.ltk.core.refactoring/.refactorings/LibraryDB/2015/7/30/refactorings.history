@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;edu.nashcc.library.LibraryDB&apos; to &apos;LibraryApp&apos;&#x0D;&#x0A;- Original project: &apos;LibraryDB&apos;&#x0D;&#x0A;- Original element: &apos;edu.nashcc.library.LibraryDB&apos;&#x0D;&#x0A;- Renamed element: &apos;edu.nashcc.library.LibraryApp&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LibraryDB&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;edu.nashcc.library{LibraryDB.java[LibraryDB" matchStrategy="1" name="LibraryApp" qualified="false" references="true" similarDeclarations="false" stamp="1437491659093" textual="false" version="1.0"/>
+</session>
