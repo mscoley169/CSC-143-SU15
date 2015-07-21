@@ -227,8 +227,8 @@ public class Calculator {
 				// try the math
 				try
 				{
-					double ans = num1 / num2;
-					answer = Double.toString(ans);
+					int ans = num1 / num2;
+					answer = Integer.toString(ans);
 					lblAnswer.setText("ANSWER: \t" + answer);
 				}
 				catch(ArithmeticException error)
