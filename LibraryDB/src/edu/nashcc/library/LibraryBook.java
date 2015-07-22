@@ -2,7 +2,7 @@ package edu.nashcc.library;
 
 public class LibraryBook {
 	// needs to accept book title, author, year, genre, record number/ISBN
-	private String bookTitle, author, genre, ISBN;
+	private String bookTitle, author, genre, iSBN;
 	private int year;
 	
 	public LibraryBook(String bookTitle, String author, String genre,
@@ -10,7 +10,7 @@ public class LibraryBook {
 		this.bookTitle = bookTitle;
 		this.author = author;
 		this.genre = genre;
-		this.ISBN = iSBN;
+		this.iSBN = iSBN;
 		this.year = year;
 	}
 	
@@ -32,17 +32,20 @@ public class LibraryBook {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getISBN() {
-		return ISBN;
+	public String getiSBN() {
+		return iSBN;
 	}
-	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+	public void setiSBN(String iSBN) {
+		this.iSBN = iSBN;
 	}
 	public int getYear() {
 		return year;
 	}
 	public void setYear(int year) {
 		this.year = year;
+	}
+	public String toString(){
+		return bookTitle + "," + author + "," + genre + "," + iSBN + "," + year;
 	}
 	
 	

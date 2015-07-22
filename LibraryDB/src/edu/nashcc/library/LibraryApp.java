@@ -15,6 +15,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import javax.swing.JTextPane;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class LibraryApp {
 
@@ -109,6 +111,27 @@ public class LibraryApp {
 		frame.getContentPane().add(textPane);
 		
 		JButton addBtn = new JButton("Add Record");
+		addBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String title, author, genre, iSBN;
+				int year;
+				try
+				{
+					title = bookTitleField.getText();
+					author = authorField.getText();
+					genre = genreField.getText();
+					iSBN = iSBNField.getText();
+					year = Integer.parseInt(yearField.getText());
+					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
+					System.out.println(myBook.toString());
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+					return;
+				}
+			}
+		});
 		addBtn.setBounds(309, 30, 115, 23);
 		frame.getContentPane().add(addBtn);
 		
@@ -120,8 +143,12 @@ public class LibraryApp {
 		delBtn.setBounds(309, 130, 115, 23);
 		frame.getContentPane().add(delBtn);
 		
+		JButton recordBtn = new JButton("Show Record");
+		recordBtn.setBounds(309, 178, 115, 23);
+		frame.getContentPane().add(recordBtn);
+		
 		JButton statsBtn = new JButton("Statistics");
-		statsBtn.setBounds(309, 178, 115, 23);
+		statsBtn.setBounds(309, 227, 115, 23);
 		frame.getContentPane().add(statsBtn);
 		
 
