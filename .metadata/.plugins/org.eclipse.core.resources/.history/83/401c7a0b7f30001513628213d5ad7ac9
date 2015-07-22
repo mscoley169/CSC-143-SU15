@@ -1,0 +1,28 @@
+package edu.nashcc.library;
+
+import java.nio.file.*;
+import java.io.*;
+import java.nio.channels.FileChannel;
+import java.nio.ByteBuffer;
+import static java.nio.file.StandardOpenOption.*;
+import java.text.*;
+
+public class FileOps {
+
+	
+	
+	public static void createEmptyFile(Path file, String s) {
+		try {
+			OutputStream outputStr = new BufferedOutputStream(
+					Files.newOutputStream(file, CREATE));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+					outputStr));
+				writer.write(s, 0, s.length());
+				writer.write("\n");
+			writer.close();
+		} catch (Exception e) {
+			System.out.println("Error message: " + e);
+		}
+	}
+	
+}

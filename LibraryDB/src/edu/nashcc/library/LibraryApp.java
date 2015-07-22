@@ -1,14 +1,16 @@
 package edu.nashcc.library;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class LibraryApp {
 
@@ -23,6 +25,8 @@ public class LibraryApp {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Path library = Paths.get("C:\\Java\\LibraryDB.txt");
+		FileOps.createFile(library, "");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -114,6 +118,8 @@ public class LibraryApp {
 					year = Integer.parseInt(yearField.getText());
 					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
 					System.out.println(myBook.toString()); // file writer class/method?
+					Path library = Paths.get("C:\\Java\\LibraryDB.txt");
+					FileOps.appendFile(library, myBook.toString());
 				}
 				catch(Exception e)
 				{
@@ -141,7 +147,5 @@ public class LibraryApp {
 		statsBtn.setBounds(309, 227, 115, 23);
 		frame.getContentPane().add(statsBtn);
 		
-
-
 	}
 }
