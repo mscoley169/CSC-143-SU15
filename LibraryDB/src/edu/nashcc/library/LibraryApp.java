@@ -13,12 +13,14 @@ import java.awt.GridBagLayout;
 import javax.swing.JTextField;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
+import javax.swing.JTextPane;
 
 public class LibraryApp {
 
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTextField bookTitleField;
 
 	/**
 	 * Launch the application.
@@ -51,6 +53,13 @@ public class LibraryApp {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		bookTitleField = new JTextField();
+		bookTitleField.setBounds(50, 29, 69, 20);
+		frame.getContentPane().add(bookTitleField);
+		bookTitleField.setColumns(10);
+		
+
 
 	}
 }
