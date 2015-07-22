@@ -41,8 +41,6 @@ public class FileOps {
 	}
 	public static void changeFile(Path file, String s){
 		// need to search for entry, replace it
-		// changeFile(Path file, String s) -- String s will search for every field/entire myBook.toString()
-		// will not work lel
 		
 		try
 		{
@@ -81,9 +79,6 @@ public class FileOps {
 	}
 	public static void displayFile(/* need to figure out what argument */){
 	// checks each text field and searches file, displays matches	
-	}
-	public static void displayStats(Path file){
-	// displays attributes of file
 	}
 	
 }

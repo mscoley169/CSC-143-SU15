@@ -131,11 +131,6 @@ public class LibraryApp {
 		addBtn.setBounds(309, 30, 115, 23);
 		frame.getContentPane().add(addBtn);
 		
-		/* For changeBtn, delBtn, recordBtn:
-		 * will need to test each field to
-		 * search through records 
-		 */
-		
 		JButton changeBtn = new JButton("Change Record");
 		changeBtn.setBounds(309, 80, 115, 23);
 		frame.getContentPane().add(changeBtn);
