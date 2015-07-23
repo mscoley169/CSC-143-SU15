@@ -9,6 +9,7 @@ import java.nio.file.Paths;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -100,9 +101,19 @@ public class LibraryApp {
 		frame.getContentPane().add(yearField);
 		yearField.setColumns(10);
 		
+		/* attempting scroll bar on pane, not sure
+		 * if need to add scrollbar to textPane or
+		 * switch to scrollPane
+		 */
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(121, 31, 178, 219);
 		frame.getContentPane().add(textPane);
+		textPane.setEditable(false);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(121, 31, 178, 219);
+		frame.getContentPane().add(scrollPane);
+		scrollPane.createVerticalScrollBar();
+		scrollPane.setVisible(true);
 		
 		JButton addBtn = new JButton("Add Record");
 		addBtn.addActionListener(new ActionListener() {
@@ -116,10 +127,11 @@ public class LibraryApp {
 					iSBN = iSBNField.getText();
 					year = yearField.getText();
 					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
-					System.out.println(myBook.toString()); // file writer class/method?
+					System.out.println(myBook.toString()); // testing output
 					Path library = Paths.get("C:\\Java\\LibraryDB.txt");
 					FileOps.appendFile(library, myBook.toString());
 					textPane.setText(myBook.displayBook());
+					System.out.println(myBook.displayBook()); // testing output
 				}
 				catch(Exception e)
 				{
