@@ -1,0 +1,74 @@
+package edu.nashcc.library;
+
+import javax.swing.text.StyledEditorKit;
+
+public class LibraryBook {
+	// needs to accept book title, author, year, genre, record number/ISBN
+	private String bookTitle, author, genre, iSBN, year;
+	
+	public LibraryBook(String bookTitle, String author, String genre,
+			String iSBN, String year) {
+		this.bookTitle = bookTitle;
+		this.author = author;
+		this.genre = genre;
+		this.iSBN = iSBN;
+		this.year = year;
+	}
+	
+	public String getBookTitle() {
+		return bookTitle;
+	}
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+	public String getiSBN() {
+		return iSBN;
+	}
+	public void setiSBN(String iSBN) {
+		this.iSBN = iSBN;
+	}
+	public String getYear() {
+		return year;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public String toString(){
+		return bookTitle + "," + author + "," + genre + "," + iSBN + "," + year;
+	}
+	public String displayBook(){
+		String[] fields = { "Title:" , "Author:" , "Genre:" , "ISBN:" , "Year:" };
+		String[] data = { bookTitle , author , genre , iSBN, year };
+		StringBuilder sb = new StringBuilder();
+		try
+		{
+		for(int i = 0; i < 5; i++){
+			//sb.append("<html><b>");
+			sb.append(fields[i]);
+			//sb.append("</b><br></html>");
+			sb.append("\n");
+			sb.append(data[i]);
+			sb.append("\n");
+		}
+		} 
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return sb.toString();
+	}
+	
+	
+}
