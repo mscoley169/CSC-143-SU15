@@ -107,19 +107,19 @@ public class LibraryApp {
 		JButton addBtn = new JButton("Add Record");
 		addBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String title, author, genre, iSBN;
-				int year;
+				String title, author, genre, iSBN, year;
 				try
 				{
 					title = bookTitleField.getText();
 					author = authorField.getText();
 					genre = genreField.getText();
 					iSBN = iSBNField.getText();
-					year = Integer.parseInt(yearField.getText());
+					year = yearField.getText();
 					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
 					System.out.println(myBook.toString()); // file writer class/method?
 					Path library = Paths.get("C:\\Java\\LibraryDB.txt");
 					FileOps.appendFile(library, myBook.toString());
+					textPane.setText(myBook.displayBook());
 				}
 				catch(Exception e)
 				{
