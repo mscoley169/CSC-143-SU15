@@ -197,13 +197,13 @@ public class LibraryApp {
 				ByteBuffer byteBuf = ByteBuffer.wrap(data);
 				fileChan.read(byteBuf);
 				
-				//while(title != null){ // infinite loop FIX
+				while(title != null){ // infinite loop FIX
 					String[] strArray = str.split(delimiter);
 					if(strArray[0].equals(title)){
 						textPane.setText(str);
 						System.out.println(str);// testing output
 					}
-				//}
+				}
 
 				}
 				catch(Exception exc)
