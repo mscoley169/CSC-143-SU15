@@ -148,6 +148,7 @@ public class LibraryApp {
 					year = yearField.getText();
 					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
 					System.out.println(myBook.toString()); // testing output
+					Path library = Paths.get("C:\\Java\\LibraryDB.dat");
 					FileOps.appendFile(library, myBook.toString());
 					textPane.setText(myBook.displayBook());
 				//	scrollPane.add(textPane);
@@ -218,6 +219,7 @@ public class LibraryApp {
 		JButton statsBtn = new JButton("Statistics");
 		statsBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Path library = Paths.get("C:\\Java\\LibraryDB.dat");
 				try
 		       {
 				BasicFileAttributes attr =
