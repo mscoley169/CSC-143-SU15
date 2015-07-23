@@ -199,7 +199,7 @@ public class LibraryApp {
 				
 				//while(title != null){ // infinite loop FIX
 					String[] strArray = str.split(delimiter);
-					if(strArray[0].equalsIgnoreCase(title)){
+					if(strArray[0].equals(title)){
 						textPane.setText(str);
 						System.out.println(str);// testing output
 					}
