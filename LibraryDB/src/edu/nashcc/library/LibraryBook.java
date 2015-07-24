@@ -54,14 +54,16 @@ public class LibraryBook {
 		StringBuilder sb = new StringBuilder();
 		try
 		{
-		for(int i = 0; i < 5; i++){
-			//sb.append("<html><b>");
+			sb.append("<html><body>");
+			for(int i = 0; i < 5; i++){
+			sb.append("<b>");
 			sb.append(fields[i]);
-			//sb.append("</b><br></html>");
+			sb.append("</b>");
 			sb.append("\t");
 			sb.append(data[i]);
 			sb.append("\n");
 		}
+			sb.append("</body></html>");
 		} 
 		catch(Exception e)
 		{

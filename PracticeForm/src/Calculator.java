@@ -253,6 +253,7 @@ public class Calculator {
 			public void actionPerformed(ActionEvent e) {
 				firstNum.setText("");
 				secondNum.setText("");
+				lblAnswer.setText("");
 			}
 		});
 		btnClear.setFont(new Font("Tahoma", Font.BOLD, 16));
