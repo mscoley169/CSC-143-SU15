@@ -97,8 +97,59 @@ public class FileOps {
 		    	ex.printStackTrace();
 		    }
 		  }
-	public static void displayFile(/* need to figure out what argument */){
-	// checks each text field and searches file, displays matches	
+	public static String displayRecord(String titleField, String authorField, String genreField, String iSBNField, String yearField){
+	// need to check each text field and search file, display matches	
+		String str = "";
+		
+		/*	Currently not working. Displays the text fields, does not search the
+		 * 	file. Need to figure out how to properly access and read from file
+		 * 	then display that record
+		 */
+		
+		try
+		{
+		// attempting to search file? lolidk
+			
+		FileInputStream inStream = new FileInputStream("C:\\Java\\LibraryDB.dat");
+		FileChannel fileChan = inStream.getChannel();
+		String title, author, genre, iSBN, year;
+		title = titleField;
+		author = authorField;
+		genre = genreField;;
+		iSBN = iSBNField;
+		year = yearField;
+	//	String str = title + "," + author + "," + genre + "," + iSBN + "," + year;
+		StringBuilder sb = new StringBuilder();
+		sb.append("Title:\t");
+		sb.append(title);
+		sb.append("\n\nAuthor:\t");
+		sb.append(author);
+		sb.append("\n\nGenre:\t");
+		sb.append(genre);
+		sb.append("\n\nISBN:\t");
+		sb.append(iSBN);
+		sb.append("\n\nYear:\t");
+		sb.append(year);
+		str = sb.toString();
+		byte[] data = str.getBytes();
+		ByteBuffer byteBuf = ByteBuffer.wrap(data);
+		fileChan.read(byteBuf);
+		
+/*		//while(title != null){ // infinite loop FIX
+			String[] strArray = str.split(",");
+			if(strArray[0].equalsIgnoreCase(title)){
+			//	textPane.setText(str);
+				book = str;
+				System.out.println(str);// testing output
+			}
+*/		//}
+
+		}
+		catch(Exception exc)
+		{
+			exc.printStackTrace();
+		}
+		return str;
 	}
 	public static void displayStats(Path file){ // unnecessary atm
 	// displays attributes of file

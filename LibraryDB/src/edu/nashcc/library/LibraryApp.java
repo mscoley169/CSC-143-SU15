@@ -226,36 +226,13 @@ public class LibraryApp {
 		JButton recordBtn = new JButton("Show Record");
 		recordBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				try
-				{
-				// attempting to search file? lolidk
-					
-				FileInputStream inStream = new FileInputStream("C:\\Java\\LibraryDB.dat");
-				FileChannel fileChan = inStream.getChannel();
 				String title, author, genre, iSBN, year;
 				title = bookTitleField.getText();
 				author = authorField.getText();
 				genre = genreField.getText();
 				iSBN = iSBNField.getText();
 				year = yearField.getText();
-				String str = title + "," + author + "," + genre + "," + iSBN + "," + year;
-				byte[] data = str.getBytes();
-				ByteBuffer byteBuf = ByteBuffer.wrap(data);
-				fileChan.read(byteBuf);
-				
-				//while(title != null){ // infinite loop FIX
-					String[] strArray = str.split(",");
-					if(strArray[0].equalsIgnoreCase(title)){
-						textPane.setText(str);
-						System.out.println(str);// testing output
-					}
-				//}
-
-				}
-				catch(Exception exc)
-				{
-					exc.printStackTrace();
-				}
+				textPane.setText(FileOps.displayRecord(title, author, genre, iSBN, year));
 			}
 		});
 		recordBtn.setToolTipText("Show Record Only Works With TITLE, AUTHOR, or ISBN");
