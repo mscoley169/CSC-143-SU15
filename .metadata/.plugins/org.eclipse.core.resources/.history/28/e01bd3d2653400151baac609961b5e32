@@ -15,7 +15,6 @@ import java.nio.file.attribute.BasicFileAttributes;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -126,20 +125,18 @@ public class LibraryApp {
 		 * if need to add scrollbar to textPane or
 		 * switch to scrollPane
 		 */
-	
-				
 		JTextPane textPane = new JTextPane();
 		//textPane.setContentType("text/html");
 		textPane.setBounds(121, 31, 178, 219);
 		frame.getContentPane().add(textPane);
 		textPane.setEditable(false);
 		textPane.setFont(new Font("Tahoma", Font.BOLD, 12));
-		JScrollPane scrollPane = new JScrollPane(textPane);
-		scrollPane.setBounds(121, 31, 178, 219);
-		frame.getContentPane().add(scrollPane);
-		scrollPane.createVerticalScrollBar();
-		scrollPane.setEnabled(true);
-		scrollPane.setVisible(true);
+	//	JScrollPane scrollPane = new JScrollPane();
+	//	scrollPane.setBounds(121, 31, 178, 219);
+	//	frame.getContentPane().add(scrollPane);
+	//	scrollPane.createVerticalScrollBar();
+	//	scrollPane.setEnabled(true);
+	//	scrollPane.setVisible(true);
 		
 		JButton addBtn = new JButton("Add Record");
 		addBtn.addActionListener(new ActionListener() {
