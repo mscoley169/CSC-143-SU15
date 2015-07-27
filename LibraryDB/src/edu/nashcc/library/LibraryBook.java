@@ -1,7 +1,6 @@
 package edu.nashcc.library;
 
-import javax.swing.text.StyledEditorKit;
-
+import java.awt.Font;
 public class LibraryBook {
 	// needs to accept book title, author, year, genre, record number/ISBN
 	private String bookTitle, author, genre, iSBN, year;
@@ -54,16 +53,16 @@ public class LibraryBook {
 		StringBuilder sb = new StringBuilder();
 		try
 		{
-			sb.append("<html><body>");
+			//sb.append("<html><body>");
 			for(int i = 0; i < 5; i++){
-			sb.append("<b>");
+			//sb.append("<b>");
 			sb.append(fields[i]);
-			sb.append("</b>");
+			//sb.append("</b>");
 			sb.append("\t");
 			sb.append(data[i]);
-			sb.append("\n");
+			sb.append("\n\n");
 		}
-			sb.append("</body></html>");
+			//sb.append("</body></html>");
 		} 
 		catch(Exception e)
 		{

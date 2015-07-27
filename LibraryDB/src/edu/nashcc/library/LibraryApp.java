@@ -1,6 +1,7 @@
 package edu.nashcc.library;
 
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
@@ -73,6 +74,7 @@ public class LibraryApp {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		frame.setLocationRelativeTo(null);
 		
 		JLabel lblTitle = new JLabel("Title");
 		lblTitle.setBounds(25, 11, 46, 14);
@@ -128,6 +130,7 @@ public class LibraryApp {
 		textPane.setBounds(121, 31, 178, 219);
 		frame.getContentPane().add(textPane);
 		textPane.setEditable(false);
+		textPane.setFont(new Font("Tahoma", Font.BOLD, 12));
 	//	JScrollPane scrollPane = new JScrollPane();
 	//	scrollPane.setBounds(121, 31, 178, 219);
 	//	frame.getContentPane().add(scrollPane);
