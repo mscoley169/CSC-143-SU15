@@ -29,18 +29,6 @@ public class LibraryApp {
 	private JTextField iSBNField;
 	private JTextField yearField;
 	
-	final String BOOK_FORMAT = "               "; // 15 chars
-	final String NAME_FORMAT = "               "; // 15 chars
-	final int NAME_LENGTH = NAME_FORMAT.length();
-	final String GENRE_FORMAT = "            "; // 12 chars
-	final String ISBN_FORMAT = "          "; // 10 chars
-	final String YEAR_FORMAT = "    ";
-	String delimiter = ",";
-	String s = BOOK_FORMAT + delimiter + NAME_FORMAT + delimiter + GENRE_FORMAT
-			+ delimiter + ISBN_FORMAT + delimiter + YEAR_FORMAT
-			+ System.getProperty("line.separator");
-	final int RECSIZE = s.length();
-
 	Path library = Paths.get("C:\\Java\\LibraryDB.dat");
 	/**
 	 * Launch the application.
@@ -212,6 +200,26 @@ public class LibraryApp {
 		frame.getContentPane().add(changeBtn);
 		
 		JButton delBtn = new JButton("Delete Record");
+		delBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String lineToRemove;
+				String title, author, genre, iSBN, year;
+				try
+				{
+					title = bookTitleField.getText();
+					author = authorField.getText();
+					genre = genreField.getText();
+					iSBN = iSBNField.getText();
+					year = yearField.getText();
+					lineToRemove = title + "," + author + "," + genre + "," + iSBN + "," + year;
+					FileOps.deleteFromFile(lineToRemove);
+				}
+				catch(Exception ex)
+				{
+					ex.printStackTrace();
+				}
+			}
+		});
 		delBtn.setBounds(309, 130, 115, 23);
 		frame.getContentPane().add(delBtn);
 		
@@ -236,7 +244,7 @@ public class LibraryApp {
 				fileChan.read(byteBuf);
 				
 				//while(title != null){ // infinite loop FIX
-					String[] strArray = str.split(delimiter);
+					String[] strArray = str.split(",");
 					if(strArray[0].equalsIgnoreCase(title)){
 						textPane.setText(str);
 						System.out.println(str);// testing output

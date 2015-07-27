@@ -67,6 +67,7 @@ public class FileOps {
 			OutputStream outStr = new BufferedOutputStream(Files.newOutputStream(file, WRITE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStr));
 			String testRec = reader.readLine();
+
 			if(oldRecord.equalsIgnoreCase(testRec)){
 				writer.write(newRecord);
 			}
@@ -84,27 +85,18 @@ public class FileOps {
 			exc.printStackTrace();
 		}
 	}
-	public static void deleteFile(Path file, String s){
-		// need to search for entry, delete it/replace with blank
-		
-		try
-		{
-			InputStream iStream = new BufferedInputStream(Files.newInputStream(file));
-			BufferedReader reader = new BufferedReader(new InputStreamReader(iStream));
-			OutputStream outStr = new BufferedOutputStream(Files.newOutputStream(file, WRITE));
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStr));
-			writer.write(" \n");
-			writer.close();
-		}
-		catch(IOException ioe)
-		{
-			ioe.printStackTrace();
-		}
-		catch(Exception exc)
-		{
-			exc.printStackTrace();
-		}
-	}
+	   public static void deleteFromFile(String lineToRemove) {
+
+		    try 
+		    {
+		    	// read file, alter file, lolwat idk...
+
+		    }
+		    catch(Exception ex)
+		    {
+		    	ex.printStackTrace();
+		    }
+		  }
 	public static void displayFile(/* need to figure out what argument */){
 	// checks each text field and searches file, displays matches	
 	}
