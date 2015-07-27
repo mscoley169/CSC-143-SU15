@@ -74,11 +74,8 @@ public class FileOps {
 				
 				if (oldRecord.equalsIgnoreCase(testRec)) {
 					// call delete method on oldRecord
-					
 					writer.write(newRecord);
-					
 				} // end if
-				
 			} while (testRec != null);
 			writer.close();
 
@@ -90,7 +87,7 @@ public class FileOps {
 		}
 	}
 
-	public static void deleteFromFile(String oldRecord) {
+	public static void deleteFromFile(String lineToRemove) {
 
 		try {
 			// read file, alter file, lolwat idk...
