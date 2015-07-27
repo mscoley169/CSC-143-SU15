@@ -15,6 +15,7 @@ import java.nio.file.attribute.BasicFileAttributes;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
@@ -175,6 +176,38 @@ public class LibraryApp {
 		 */
 		
 		JButton changeBtn = new JButton("Change Record");
+		changeBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String titleOld, authorOld, genreOld, iSBNOld, yearOld;
+				String titleNew, authorNew, genreNew, iSBNNew, yearNew;
+				try
+				{
+					titleOld = bookTitleField.getText();
+					authorOld = authorField.getText();
+					genreOld = genreField.getText();
+					iSBNOld = iSBNField.getText();
+					yearOld = yearField.getText();
+					titleNew = newBookInput("Enter the title: ");
+					authorNew = newBookInput("Enter the author: ");
+					genreNew = newBookInput("Enter the genre: ");
+					iSBNNew = newBookInput("Enter the ISBN: ");
+					yearNew = newBookInput("Enter the year: ");
+					
+					LibraryBook oldBook = new LibraryBook(titleOld, authorOld, genreOld, iSBNOld, yearOld);
+					LibraryBook newBook = new LibraryBook(titleNew, authorNew, genreNew, iSBNNew, yearNew);
+					
+					//System.out.println(oldBook.toString()); // testing output
+					FileOps.changeFile(library, oldBook.toString(), newBook.toString());
+					textPane.setText(newBook.displayBook());
+					System.out.println(newBook.displayBook()); // testing output
+				}
+				catch(Exception ex)
+				{
+					ex.printStackTrace();
+					return;
+				}
+			}
+		});
 		changeBtn.setBounds(309, 80, 115, 23);
 		frame.getContentPane().add(changeBtn);
 		
@@ -244,5 +277,8 @@ public class LibraryApp {
 		statsBtn.setBounds(309, 227, 115, 23);
 		frame.getContentPane().add(statsBtn);
 		
+	}
+	public static String newBookInput(String prompt){
+		return JOptionPane.showInputDialog(null, prompt, "Change Record", JOptionPane.QUESTION_MESSAGE);
 	}
 }

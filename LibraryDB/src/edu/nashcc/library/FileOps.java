@@ -31,7 +31,7 @@ public class FileOps {
 					Files.newOutputStream(file, CREATE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
 					outputStr));
-				writer.write(str, 0, str.length());
+				writer.write(str, 0, RECSIZE);
 				writer.write("\n");
 			writer.close();
 		} catch (Exception e) {
@@ -55,17 +55,25 @@ public class FileOps {
 			exc.printStackTrace();
 		}
 	}
-	public static void changeFile(Path file, String s){
+	public static void changeFile(Path file, String oldRecord, String newRecord){
 		// need to search for entry, replace it
 		// changeFile(Path file, String s) -- String s will search for every field/entire myBook.toString()
 		// will not work lel
 		
 		try
 		{
+			InputStream iStream = new BufferedInputStream(Files.newInputStream(file));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(iStream));
 			OutputStream outStr = new BufferedOutputStream(Files.newOutputStream(file, WRITE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStr));
-			writer.write(s + "\n");
+			String testRec = reader.readLine();
+			if(oldRecord.equalsIgnoreCase(testRec)){
+				writer.write(newRecord);
+			}
+			
+
 			writer.close();
+
 		}
 		catch(IOException ioe)
 		{
@@ -81,6 +89,8 @@ public class FileOps {
 		
 		try
 		{
+			InputStream iStream = new BufferedInputStream(Files.newInputStream(file));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(iStream));
 			OutputStream outStr = new BufferedOutputStream(Files.newOutputStream(file, WRITE));
 			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStr));
 			writer.write(" \n");
@@ -98,7 +108,7 @@ public class FileOps {
 	public static void displayFile(/* need to figure out what argument */){
 	// checks each text field and searches file, displays matches	
 	}
-	public static void displayStats(Path file){
+	public static void displayStats(Path file){ // unnecessary atm
 	// displays attributes of file
 	}
 	
