@@ -4,9 +4,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -29,12 +27,13 @@ public class LibraryApp {
 	private JTextField iSBNField;
 	private JTextField yearField;
 	
-	Path library = Paths.get("C:\\Java\\LibraryDB.dat");
+	private static final File library = new File("C:\\Java\\LibraryDB.dat");
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		Path library = Paths.get("C:\\Java\\LibraryDB.dat");
+
+		// need to wrap in an if(file does not exist) block
 		FileOps.createFile(library, "");
 		
 		EventQueue.invokeLater(new Runnable() {

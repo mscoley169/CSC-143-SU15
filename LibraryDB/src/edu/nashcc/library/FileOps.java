@@ -1,52 +1,50 @@
 package edu.nashcc.library;
 
-import java.nio.file.*;
-import java.io.*;
-import java.nio.channels.FileChannel;
+import static java.nio.file.StandardOpenOption.APPEND;
+import static java.nio.file.StandardOpenOption.WRITE;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-import static java.nio.file.StandardOpenOption.*;
+import org.apache.commons.io.FileUtils;
 
-import java.text.*;
+/*	Change all Path path to File file
+ *	change methods to use FileUtils lib
+ * 	clean up code 
+ */
 
 public class FileOps {
 
-	public static void createFile(Path file, String s) {
-
-		final String BOOK_FORMAT = "               "; // 15 chars
-		final String NAME_FORMAT = "               "; // 15 chars
-		final int NAME_LENGTH = NAME_FORMAT.length();
-		final String GENRE_FORMAT = "            "; // 12 chars
-		final String ISBN_FORMAT = "          "; // 10 chars
-		final String YEAR_FORMAT = "    ";
-		String delimiter = ",";
-		String str = BOOK_FORMAT + delimiter + NAME_FORMAT + delimiter
-				+ GENRE_FORMAT + delimiter + ISBN_FORMAT + delimiter
-				+ YEAR_FORMAT + System.getProperty("line.separator");
-		final int RECSIZE = str.length();
-
+	public static void createFile(File file, String s) {
 		try {
-			OutputStream outputStr = new BufferedOutputStream(
-					Files.newOutputStream(file, CREATE));
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-					outputStr));
-			writer.write(str, 0, RECSIZE);
-			writer.write("\n");
-			writer.close();
+			FileUtils.writeStringToFile(file, s);
 		} catch (Exception e) {
 			System.out.println("Error message: " + e);
 		}
 	}
 
-	public static void appendFile(Path file, String s) {
+	public static void appendFile(File file, String s) {
 		try {
-			OutputStream outStr = new BufferedOutputStream(
-					Files.newOutputStream(file, APPEND));
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
-					outStr));
-			writer.write(s + "\n");
-			writer.close();
-		} catch (IOException ioe) {
+		//	OutputStream outStr = new BufferedOutputStream(
+		//			Files.newOutputStream(file, APPEND));
+		//	BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+		//			outStr));
+		//	writer.write(s + "\n");
+		//	writer.close();
+		}catch (IOException ioe) {
 			ioe.printStackTrace();
 		} catch (Exception exc) {
 			exc.printStackTrace();
@@ -71,14 +69,14 @@ public class FileOps {
 			String testRec;
 			do {
 				testRec = reader.readLine();
-				
+
 				if (oldRecord.equalsIgnoreCase(testRec)) {
 					// call delete method on oldRecord
-					
+
 					writer.write(newRecord);
-					
+
 				} // end if
-				
+
 			} while (testRec != null);
 			writer.close();
 
