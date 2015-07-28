@@ -60,8 +60,9 @@ public class FileOps {
 				testRec = reader.readLine();
 
 				if (oldRecord.equalsIgnoreCase(testRec)) {
-					// overwrites oldRecord
+					// overwrites oldRecord -- only the first entry
 					writer.write(newRecord);
+				
 					writer.newLine();
 					
 				} // end if
@@ -89,6 +90,7 @@ public class FileOps {
 
 	public static String displayRecord(File file, String s) {
 		// just returns the top record, use lineIterator
+		// also errors lel
 		String str = "";
 		try {
 			LineIterator it = FileUtils.lineIterator(file);
