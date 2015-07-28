@@ -7,11 +7,11 @@ public class LibraryBook {
 	
 	public LibraryBook(String bookTitle, String author, String genre,
 			String iSBN, String year) {
-		this.bookTitle = bookTitle;
-		this.author = author;
-		this.genre = genre;
-		this.iSBN = iSBN;
-		this.year = year;
+		setBookTitle(bookTitle);
+		setAuthor(author);
+		setGenre(genre);
+		setiSBN(iSBN);
+		setYear(year);
 	}
 	
 	public String getBookTitle() {

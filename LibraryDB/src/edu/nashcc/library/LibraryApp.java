@@ -34,7 +34,7 @@ public class LibraryApp {
 	public static void main(String[] args) {
 
 		// need to wrap in an if(file does not exist) block
-		FileOps.createFile(library, "");
+		//FileOps.createFile(library, "");
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -109,15 +109,8 @@ public class LibraryApp {
 		yearField.setBounds(25, 230, 86, 20);
 		frame.getContentPane().add(yearField);
 		yearField.setColumns(10);
-		
-		/* attempting scroll bar on pane, not sure
-		 * if need to add scrollbar to textPane or
-		 * switch to scrollPane
-		 */
-	
-				
+						
 		JTextPane textPane = new JTextPane();
-		//textPane.setContentType("text/html");
 		textPane.setBounds(121, 31, 178, 219);
 		frame.getContentPane().add(textPane);
 		textPane.setEditable(false);
@@ -141,11 +134,11 @@ public class LibraryApp {
 					iSBN = iSBNField.getText();
 					year = yearField.getText();
 					LibraryBook myBook = new LibraryBook(title, author, genre, iSBN, year);
-					System.out.println(myBook.toString()); // testing output
+					System.out.println("myBook.toString(): " + myBook.toString()); // testing output
 					FileOps.appendFile(library, myBook.toString());
 					textPane.setText(myBook.displayBook());
 				//	scrollPane.add(textPane);
-					System.out.println(myBook.displayBook()); // testing output
+					System.out.println("myBook.displayBook(): " + myBook.displayBook()); // testing output
 				}
 				catch(Exception e)
 				{
@@ -184,9 +177,10 @@ public class LibraryApp {
 					LibraryBook newBook = new LibraryBook(titleNew, authorNew, genreNew, iSBNNew, yearNew);
 					
 					//System.out.println(oldBook.toString()); // testing output
-					FileOps.changeFile(library, oldBook.toString(), newBook.toString());
+					Path lib = Paths.get("C:\\Java\\LibraryDB.dat");
+					FileOps.changeFile(lib, oldBook.toString(), newBook.toString());
 					textPane.setText(newBook.displayBook());
-					System.out.println(newBook.displayBook()); // testing output
+					System.out.println("newBook.displayBook(): " + newBook.displayBook()); // testing output
 				}
 				catch(Exception ex)
 				{
@@ -231,14 +225,23 @@ public class LibraryApp {
 				genre = genreField.getText();
 				iSBN = iSBNField.getText();
 				year = yearField.getText();
-				textPane.setText(FileOps.displayRecord(title, author, genre, iSBN, year));
+				LibraryBook testBook = new LibraryBook(title, author, genre, iSBN, year);
+				String fields = FileOps.displayRecord(library, testBook.toString());
+				String formatted = testBook.toString(); //FileOps.formatDisplay(title, author, genre, iSBN, year);
+				System.out.println("fields: " + fields);
+				System.out.println("formatted: " + formatted); // testing output
+				if(fields.equalsIgnoreCase(formatted)){
+				textPane.setText(formatted);
+				} else {
+					textPane.setText("That record does not exist. \n\n\nE:Show");
+				}
 			}
 		});
 		recordBtn.setToolTipText("Show Record Only Works With TITLE, AUTHOR, or ISBN");
 		recordBtn.setBounds(309, 178, 115, 23);
 		frame.getContentPane().add(recordBtn);
 		
-		JButton statsBtn = new JButton("Statistics");
+	/*	JButton statsBtn = new JButton("Statistics");
 		statsBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try
@@ -260,7 +263,7 @@ public class LibraryApp {
 		});
 		statsBtn.setBounds(309, 227, 115, 23);
 		frame.getContentPane().add(statsBtn);
-		
+	*/	
 	}
 	public static String newBookInput(String prompt){
 		return JOptionPane.showInputDialog(null, prompt, "Change Record", JOptionPane.QUESTION_MESSAGE);
