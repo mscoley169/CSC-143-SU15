@@ -1,10 +1,3 @@
-/*	Matthew S. Coley
- * 	LibraryDB
- *  29 July 2015
- */
-
-// Uses Apache Commons IO
-
 package edu.nashcc.library;
 
 import java.awt.EventQueue;
@@ -156,7 +149,12 @@ public class LibraryApp {
 		});
 		addBtn.setBounds(309, 30, 115, 23);
 		frame.getContentPane().add(addBtn);
-			
+		
+		/* For changeBtn, delBtn, recordBtn:
+		 * will need to test each field to
+		 * search through records 
+		 */
+		
 		JButton changeBtn = new JButton("Change Record");
 		changeBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -177,8 +175,10 @@ public class LibraryApp {
 					
 					LibraryBook oldBook = new LibraryBook(titleOld, authorOld, genreOld, iSBNOld, yearOld);
 					LibraryBook newBook = new LibraryBook(titleNew, authorNew, genreNew, iSBNNew, yearNew);
-
-					FileOps.changeFile(library, oldBook.toString(), newBook.toString());
+					
+					//System.out.println(oldBook.toString()); // testing output
+					Path lib = Paths.get("C:\\Java\\LibraryDB.dat");
+					FileOps.changeFile(lib, oldBook.toString(), newBook.toString());
 					textPane.setText(newBook.displayBook());
 					System.out.println("newBook.displayBook(): " + newBook.displayBook()); // testing output
 				}
@@ -206,7 +206,6 @@ public class LibraryApp {
 					year = yearField.getText();
 					lineToRemove = title + "," + author + "," + genre + "," + iSBN + "," + year;
 					FileOps.deleteFromFile(library, lineToRemove);
-					textPane.setText("Record has been removed");
 				}
 				catch(Exception ex)
 				{
@@ -217,7 +216,7 @@ public class LibraryApp {
 		delBtn.setBounds(309, 130, 115, 23);
 		frame.getContentPane().add(delBtn);
 		
-		JButton recordBtn = new JButton("DO NOT PRESS");
+		JButton recordBtn = new JButton("Show Record");
 		recordBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String title, author, genre, iSBN, year;
@@ -227,22 +226,44 @@ public class LibraryApp {
 				iSBN = iSBNField.getText();
 				year = yearField.getText();
 				LibraryBook testBook = new LibraryBook(title, author, genre, iSBN, year);
-				String fields = title + "," + author + "," + genre + "," + iSBN + "," + year;
-				String formattedBook = testBook.toString(); //FileOps.formatDisplay(title, author, genre, iSBN, year);
+				String fields = FileOps.displayRecord(library, testBook.toString());
+				String formatted = testBook.toString(); //FileOps.formatDisplay(title, author, genre, iSBN, year);
 				System.out.println("fields: " + fields);
-				System.out.println("formattedBook: " + formattedBook); // testing output
-				if(fields.equalsIgnoreCase(formattedBook)){
-					String formatted = FileOps.displayRecord(library, testBook.toString());
+				System.out.println("formatted: " + formatted); // testing output
+				if(fields.equalsIgnoreCase(formatted)){
 				textPane.setText(formatted);
 				} else {
 					textPane.setText("That record does not exist. \n\n\nE:Show");
 				}
 			}
 		});
-		recordBtn.setToolTipText("DOES NOT WORK lel");
+		recordBtn.setToolTipText("Show Record Only Works With TITLE, AUTHOR, or ISBN");
 		recordBtn.setBounds(309, 178, 115, 23);
 		frame.getContentPane().add(recordBtn);
 		
+	/*	JButton statsBtn = new JButton("Statistics");
+		statsBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try
+		       {
+				BasicFileAttributes attr =
+		                 Files.readAttributes(library, BasicFileAttributes.class);
+				StringBuilder sb = new StringBuilder();
+				      sb.append("File: " + library.getFileName());
+				      sb.append("\n\nCreation time: " + attr.creationTime());
+		              sb.append("\n\nLast modified time: " + attr.lastModifiedTime());
+		              sb.append("\n\nSize: " + attr.size());
+		        textPane.setText(sb.toString());
+		       }
+		       catch(Exception ex)
+		       {
+		    	   ex.printStackTrace();
+		       }
+			}
+		});
+		statsBtn.setBounds(309, 227, 115, 23);
+		frame.getContentPane().add(statsBtn);
+	*/	
 	}
 	public static String newBookInput(String prompt){
 		return JOptionPane.showInputDialog(null, prompt, "Change Record", JOptionPane.QUESTION_MESSAGE);

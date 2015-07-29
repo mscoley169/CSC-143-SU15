@@ -227,7 +227,7 @@
         <tags>EditorStack</tags>
         <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_e8Kq2DSIEeW1K6cqYUbssg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LibraryApp.java" iconURI="platform:/plugin/org.eclipse.wb.core.ui/icons/gui_editor.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wb.core.guiEditor&quot; name=&quot;LibraryApp.java&quot; partName=&quot;LibraryApp.java&quot; title=&quot;LibraryApp.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/LibraryApp.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/LibraryApp.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;6312&quot; selectionTopPixel=&quot;2855&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.wb.core.guiEditor&quot; name=&quot;LibraryApp.java&quot; partName=&quot;LibraryApp.java&quot; title=&quot;LibraryApp.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/LibraryApp.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/LibraryApp.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;25&quot; selectionOffset=&quot;61&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.wb.core.guiEditor</tags>
           <tags>removeOnHide</tags>
@@ -329,7 +329,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_e8Kq6zSIEeW1K6cqYUbssg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="LibraryBook.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LibraryBook.java&quot; partName=&quot;LibraryBook.java&quot; title=&quot;LibraryBook.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/LibraryBook.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/LibraryBook.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;417&quot; selectionTopPixel=&quot;725&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;LibraryBook.java&quot; partName=&quot;LibraryBook.java&quot; title=&quot;LibraryBook.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/LibraryBook.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/LibraryBook.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;86&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -399,7 +399,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_e8Kq-DSIEeW1K6cqYUbssg" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FileOps.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FileOps.java&quot; partName=&quot;FileOps.java&quot; title=&quot;FileOps.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/FileOps.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/FileOps.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;2448&quot; selectionTopPixel=&quot;1200&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FileOps.java&quot; partName=&quot;FileOps.java&quot; title=&quot;FileOps.java&quot; tooltip=&quot;LibraryDB/src/edu/nashcc/library/FileOps.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/LibraryDB/src/edu/nashcc/library/FileOps.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;86&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -1310,7 +1310,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_e8LSqjSIEeW1K6cqYUbssg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_fPcg1zUpEeWw6spNvI8w7A" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_e8Nv4jSIEeW1K6cqYUbssg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VfaiZzXzEeWlwuJFQQeGVw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_e8Nv4jSIEeW1K6cqYUbssg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_e8LSuDSIEeW1K6cqYUbssg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1334,7 +1334,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_e8LTAzSIEeW1K6cqYUbssg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_fPlqwDUpEeWw6spNvI8w7A" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_e8NvXDSIEeW1K6cqYUbssg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_VfjsUzXzEeWlwuJFQQeGVw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_e8NvXDSIEeW1K6cqYUbssg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_e8LTDzSIEeW1K6cqYUbssg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

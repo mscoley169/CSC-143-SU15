@@ -1,10 +1,3 @@
-/*	Matthew S. Coley
- * 	LibraryDB
- *  29 July 2015
- */
-
-// Uses Apache Commons IO
-
 package edu.nashcc.library;
 
 import java.awt.EventQueue;
@@ -156,7 +149,12 @@ public class LibraryApp {
 		});
 		addBtn.setBounds(309, 30, 115, 23);
 		frame.getContentPane().add(addBtn);
-			
+		
+		/* For changeBtn, delBtn, recordBtn:
+		 * will need to test each field to
+		 * search through records 
+		 */
+		
 		JButton changeBtn = new JButton("Change Record");
 		changeBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -177,7 +175,9 @@ public class LibraryApp {
 					
 					LibraryBook oldBook = new LibraryBook(titleOld, authorOld, genreOld, iSBNOld, yearOld);
 					LibraryBook newBook = new LibraryBook(titleNew, authorNew, genreNew, iSBNNew, yearNew);
-
+					
+					//System.out.println(oldBook.toString()); // testing output
+					//Path lib = Paths.get("C:\\Java\\LibraryDB.dat");
 					FileOps.changeFile(library, oldBook.toString(), newBook.toString());
 					textPane.setText(newBook.displayBook());
 					System.out.println("newBook.displayBook(): " + newBook.displayBook()); // testing output

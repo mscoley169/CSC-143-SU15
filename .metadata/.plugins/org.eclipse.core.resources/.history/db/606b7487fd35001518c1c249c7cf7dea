@@ -3,8 +3,6 @@
  *  29 July 2015
  */
 
-// Uses Apache Commons IO
-
 package edu.nashcc.library;
 
 import static java.nio.file.StandardOpenOption.WRITE;

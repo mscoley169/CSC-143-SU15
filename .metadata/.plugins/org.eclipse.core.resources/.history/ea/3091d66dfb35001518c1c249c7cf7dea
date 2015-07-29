@@ -1,10 +1,3 @@
-/*	Matthew S. Coley
- * 	LibraryDB
- *  29 July 2015
- */
-
-// Uses Apache Commons IO
-
 package edu.nashcc.library;
 
 import static java.nio.file.StandardOpenOption.WRITE;
@@ -34,6 +27,14 @@ import org.apache.commons.io.LineIterator;
 
 public class FileOps {
 
+/*	public static void createFile(File file, String s) {
+		try {
+			FileUtils.writeStringToFile(file, s);
+		} catch (Exception e) {
+			System.out.println("Error message: " + e);
+		}
+	} */
+
 	public static void appendFile(File file, String s) {
 		try {
 			FileUtils.writeStringToFile(file, s, true); // (file, String, boolean forces to not overwrite)
@@ -47,7 +48,6 @@ public class FileOps {
 
 	public static void changeFile(File file, String oldRecord, String newRecord) {
 		try {
-			// create .tmp file, copy .dat to .tmp, run iterator on .dat
 			File destFile = new File("C:\\Java\\LibraryDB.dat.tmp");
 			FileUtils.copyFile(file, destFile);
 			LineIterator it = FileUtils.lineIterator(file);
@@ -66,6 +66,30 @@ public class FileOps {
 			}
 			FileUtils.copyFile(destFile, file);
 			FileUtils.deleteQuietly(destFile);
+			
+			/*			InputStream iStream = new BufferedInputStream(
+					Files.newInputStream(file));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					iStream));
+			OutputStream outStr = new BufferedOutputStream(
+					Files.newOutputStream(file, WRITE));
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(
+					outStr));
+			String testRec;
+			do {
+				testRec = reader.readLine();
+
+				if (oldRecord.equalsIgnoreCase(testRec)) {
+					// overwrites oldRecord -- only the first entry
+					writer.write(newRecord);
+				
+					writer.newLine();
+					
+				} // end if
+
+			} while (testRec != null);
+			writer.close();
+*/
 		} // end try
 		catch (IOException ioe) {
 			ioe.printStackTrace();
@@ -82,7 +106,6 @@ public class FileOps {
 			File destFile = new File("C:\\Java\\LibraryDB.dat.tmp");
 			FileUtils.copyFile(file, destFile);
 			LineIterator it = FileUtils.lineIterator(file);
-			FileUtils.writeStringToFile(destFile, "");
 			while(it.hasNext()){
 				String line = it.nextLine();
 				FileUtils.writeStringToFile(destFile, line);
@@ -128,6 +151,9 @@ public class FileOps {
 		String str = "";
 		try
 		{
+		FileInputStream inStream = new FileInputStream(
+				"C:\\Java\\LibraryDB.dat");
+		FileChannel fileChan = inStream.getChannel();
 		String title, author, genre, iSBN, year;
 		title = titleField;
 		author = authorField;
@@ -155,4 +181,9 @@ public class FileOps {
 		}
 		return str;
 	}
+	
+	public static void displayStats(Path file) { // unnecessary atm
+		// displays attributes of file
+	}
+
 }
