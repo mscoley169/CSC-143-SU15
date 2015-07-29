@@ -243,20 +243,6 @@ public class LibraryApp {
 		recordBtn.setBounds(309, 178, 115, 23);
 		frame.getContentPane().add(recordBtn);
 		
-		JButton clearBtn = new JButton("CLEAR");
-		clearBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				bookTitleField.setText("");
-				authorField.setText("");
-				genreField.setText("");
-				iSBNField.setText("");
-				yearField.setText("");
-				textPane.setText("");
-			}
-		});
-		clearBtn.setBounds(309, 229, 115, 23);
-		frame.getContentPane().add(clearBtn);
-		
 	}
 	public static String newBookInput(String prompt){
 		return JOptionPane.showInputDialog(null, prompt, "Change Record", JOptionPane.QUESTION_MESSAGE);
